@@ -11,3 +11,27 @@ Route::get('/sobre-nos', [App\Http\Controllers\SObreNosController::class, 'sobre
 Route::get('/fornecedores', [App\Http\Controllers\FornecedoresController::class, 'fornecedores']);
 
 Route::get('/servicos', [App\Http\Controllers\ServicosController::class, 'servicos']);
+
+Route::prefix("/api")->group(function(){
+    Route::get('/login', function(){
+        return 'login';
+    });
+    
+    Route::get('/produtos', function(){
+        return 'produtos';
+    });
+    
+    Route::get('/provedores', function(){
+        return 'provedores';
+    });
+    
+    Route::get('/cliente', function(){
+        return 'cliente';
+    });
+});
+
+Route::fallback(function(){
+    echo 'A rota acessada não existe. 
+    <a href="'.route('site.principal').'">clique aqui</a>
+    para ir ao site principal';
+});
