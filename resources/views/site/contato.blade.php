@@ -66,3 +66,4 @@
                 <img src="img/mapa.png">
             </div>
         </div>
+@endsection        
